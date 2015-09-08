@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+//#import "BNRItem.m"
 
 @interface BNRItem : NSObject
 { //these are the instance variables that are created whenever a new instance of BNRItem object is created
@@ -16,7 +17,7 @@
     NSDate *_dateCreated;
 }
 
-//Designated initializer for BNRItem 
+//Designated initializer for BNRItem
 - (instancetype)initWithItemName:(NSString *)name
                   valueInDollars:(int)value
                     serialNumber:(NSString *)sNumber;  //this initializer needs all three arguments to be initialized

@@ -30,19 +30,17 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%@", item);
         }
         
-        BNRItem *item = [[BNRItem alloc]init];
+        BNRItem *item = [[BNRItem alloc] initWithItemName:@"red sofa"  //creates an instance of BNRItem using the designated initializer
+                                    valueInDollars:100
+                                     serialNumber:@"a1b2c"];
         
-        //this creates NSString, "red sofa" and gives it to the BNRItem
-//        [item setItemName:@"red sofa"];
-        item.itemName=@"red sofa";
+        BNRItem *itemWithName = [[BNRItem alloc] initWithItemName:@"blue sofa"]; //creates instance of BNRItem with name only
+        NSLog(@"%@", itemWithName);
         
-        //this creates NSString, "a12bc" and gives it to the BNRItem
-//        [item setSerialNumber:@"a12bc"];
-        item.serialNumber=@"a12bc";
+        BNRItem *itemWithNoName = [[BNRItem alloc] init]; //creates another instance of BNRItem with no name, only init. 
+        NSLog(@"%@", itemWithNoName);
         
-        //this sends value of 100 to be used as the valueInDollars of this BNRItem
-//        [item setValueInDollars:100];
-        item.valueInDollars=100;
+        
         
         //the %@ token is replaced with athe result of sending the description message to the corresponding argument
         NSLog(@"%@", item);
