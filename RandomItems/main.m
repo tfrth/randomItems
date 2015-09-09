@@ -33,17 +33,13 @@ int main(int argc, const char * argv[]) {
         BNRItem *item = [[BNRItem alloc] initWithItemName:@"red sofa"  //creates an instance of BNRItem using the designated initializer
                                     valueInDollars:100
                                      serialNumber:@"a1b2c"];
+         NSLog(@"%@", item);
         
         BNRItem *itemWithName = [[BNRItem alloc] initWithItemName:@"blue sofa"]; //creates instance of BNRItem with name only
         NSLog(@"%@", itemWithName);
         
         BNRItem *itemWithNoName = [[BNRItem alloc] init]; //creates another instance of BNRItem with no name, only init. 
         NSLog(@"%@", itemWithNoName);
-        
-        
-        
-        //the %@ token is replaced with athe result of sending the description message to the corresponding argument
-        NSLog(@"%@", item);
         
         //destroy the mutable array object
         items = nil;

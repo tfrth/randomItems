@@ -37,6 +37,39 @@
     return [self initWithItemName:@"Item"];
 }
 
++ (instancetype)randomItem {
+    
+    //create immutable array of three adjectives
+    NSArray *randomAdjectiveList = @[@"fluffly", @"rusty", @"shiny"];
+    
+    //create an immutable array of three nouns
+    NSArray *randomNounList = @[@"bear", @"spork", @"mac"];
+  
+    //get the index of a random adjective/noun from the lists. % = modulo (remainder). So adjectiveOndex is a random number between 0 and 2 inclusive.
+    NSInteger adjectiveIndex = arc4random() % [randomAdjectiveList count];
+    NSInteger nounIndex = arc4random() % [randomNounList count];
+    
+    //note that NSInteger is not an object, but a type definition for "long"
+    
+    NSString *randomName = [NSString stringWithFormat:@"%@ %@",
+                              [randomAdjectiveList objectAtIndex:adjectiveIndex],
+                              [randomNounList objectAtIndex:nounIndex]];
+    
+    int randomValue = arc4random() % 100;
+    
+    NSString *randomSerialNumber = [NSString stringWithFormat:@"%c%c%c%c%c",
+                                        '0' + arc4random() % 10,
+                                        'A' + arc4random() % 26,
+                                        '0' + arc4random() % 10,
+                                        'A' + arc4random() % 26,
+                                        '0' + arc4random() % 10];
+    BNRItem *newItem = [[self alloc] initWithItemName:randomName
+                                       valueInDollars:randomValue
+                                         serialNumber:randomSerialNumber];
+    return newItem;
+    
+};
+
 - (NSString *)description{
     NSString *descriptionString =
     [[NSString alloc] initWithFormat:@"%@ (%@): Worth $%d, recorded on %@",

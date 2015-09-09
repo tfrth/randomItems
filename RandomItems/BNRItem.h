@@ -17,6 +17,8 @@
     NSDate *_dateCreated;
 }
 
++ (instancetype)randomItem; //class method that will be implemented to create a random item (note the + instead of -)
+
 //Designated initializer for BNRItem
 - (instancetype)initWithItemName:(NSString *)name
                   valueInDollars:(int)value
