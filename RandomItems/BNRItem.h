@@ -26,6 +26,8 @@
 
 - (instancetype)initWithItemName:(NSString *)name; //if you only know the name, then this initializer method can be used
 
+- (instancetype)initWithItemNameAndSerialNumber: (NSString *)name serialNumber:(NSString *)sNumber; //initializer method with both name and serial number 
+
 - (void)setItemName:(NSString *)str;
 - (NSString *)itemName;
 
